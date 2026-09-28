@@ -2,7 +2,6 @@
 let
   students = [
     # "firstname.lastname"
-    "hugo.hardel"
   ];
 in
 {
@@ -15,6 +14,7 @@ in
         isNormalUser = true;
         description = "Schüler";
         extraGroups = [ "students" ];
+        initialPassword = "abcd";
       });
     };
 }

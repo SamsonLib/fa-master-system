@@ -4,7 +4,7 @@
     {
       users.users.slie = {
         isNormalUser = true;
-        description = "Samson Liebscher";
+        description = "S Lie";
         extraGroups = [
           "networkmanager"
           "wheel"

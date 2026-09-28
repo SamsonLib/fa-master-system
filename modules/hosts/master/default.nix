@@ -1,8 +1,5 @@
-{ self, inputs, ... }:
-{
+{ self, inputs, ... }: {
   flake.nixosConfigurations.master = inputs.nixpkgs.lib.nixosSystem {
-    modules = [
-      self.nixosModules.masterConfiguration
-    ];
+    modules = [ self.nixosModules.masterConfiguration ];
   };
 }

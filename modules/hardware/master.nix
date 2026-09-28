@@ -1,15 +1,6 @@
-{ self, inputs, ... }:
-
-{
+{ ... }: {
   flake.nixosModules.masterHardware =
-    {
-      config,
-      lib,
-      pkgs,
-      modulesPath,
-      ...
-    }:
-
+    { lib, modulesPath, ... }:
     {
       imports = [
         (modulesPath + "/profiles/qemu-guest.nix")
@@ -25,9 +16,7 @@
         "sr_mod"
         "virtio"
       ];
-      boot.initrd.kernelModules = [ ];
       boot.kernelModules = [ "kvm-amd" ];
-      boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/43f18e80-dc82-43c4-9b91-ee53b68e8e3a";
@@ -49,5 +38,4 @@
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     };
-
 }
